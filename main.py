@@ -9,13 +9,13 @@ role_keyboard = ReplyKeyboardMarkup([["من استاد هستم"], ["من شاگ
 student_menu = ReplyKeyboardMarkup([["ثبت حضور", "دیدن جلسات من"]], resize_keyboard=True)
 admin_menu = ReplyKeyboardMarkup([["ثبت جلسه (با وویس یا متن)", "لیست جلسات شاگردان"]], resize_keyboard=True)
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def start(update: Updater, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "سلام! خوش اومدی به کلاس‌یار.\nنقشت رو انتخاب کن:",
         reply_markup=role_keyboard
     )
 
-async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def handle_message(update: Updater, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
     text = update.message.text
 
